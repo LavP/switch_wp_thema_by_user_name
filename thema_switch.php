@@ -11,10 +11,13 @@ function my_theme_change($template) {
         $user = wp_get_current_user();
         if($user->first_name === 'kusuhara') {
             return 'kusuhara'; //テスト用テーマのフォルダ名
-        } else if($user->first_name === 'goto') {
+        }else if($user->first_name === 'goto') {
             return 'goto';
         }else{
-            return $template;
+            return 'atea_dev_a';
+        }
+        if(!is_user_logged_in()){
+            return 'atea_dev_a';
         }
     }
 }
